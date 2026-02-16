@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DerivApp - Conversion Pi</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    input { padding: 10px; margin: 10px; }
+    button { padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h1>Convertisseur Pi ↔ USD</h1>
+  <p>Taux fictif : 1 Pi = 30 USD</p>
+
+  <input type="number" id="piValue" placeholder="Entrez Pi">
+  <button onclick="convertToUSD()">Convertir en USD</button>
+  <p id="resultUSD"></p>
+
+  <input type="number" id="usdValue" placeholder="Entrez USD">
+  <button onclick="convertToPi()">Convertir en Pi</button>
+  <p id="resultPi"></p>
+
+  <script>
+    function convertToUSD() {
+      let pi = document.getElementById('piValue').value;
+      document.getElementById('resultUSD').innerText = pi + " Pi = " + (pi * 30) + " USD";
+    }
+    function convertToPi() {
+      let usd = document.getElementById('usdValue').value;
+      document.getElementById('resultPi').innerText = usd + " USD = " + (usd / 30) + " Pi";
+    }
+  </script>
+</body>
+</html>
